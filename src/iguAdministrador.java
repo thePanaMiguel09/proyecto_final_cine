@@ -1,3 +1,6 @@
+
+import javax.swing.JPanel;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -13,7 +16,11 @@ public class iguAdministrador extends javax.swing.JFrame {
      * Creates new form iguAdministrador
      */
     public iguAdministrador() {
+        
+        CrearSala = new JPanel();
+        CrearSala.setVisible(false);
         initComponents();
+        add(CrearSala);
     }
 
     /**
@@ -27,16 +34,18 @@ public class iguAdministrador extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        crearSala = new javax.swing.JButton();
-        registrar = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
+        t_sala = new javax.swing.JButton();
+        t_registrar = new javax.swing.JButton();
+        CrearSala = new javax.swing.JPanel();
         tSala = new javax.swing.JLabel();
         tipoSala = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         t_filas = new javax.swing.JTextField();
         tColumnas = new javax.swing.JLabel();
         t_Columnas = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        createSala = new javax.swing.JButton();
+        b_busqueda = new javax.swing.JButton();
+        b_est1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -46,13 +55,18 @@ public class iguAdministrador extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("CINEMOVIES-ADMINISTRADOR");
 
-        crearSala.setBackground(new java.awt.Color(51, 255, 255));
-        crearSala.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
-        crearSala.setText("CREAR SALA");
+        t_sala.setBackground(new java.awt.Color(51, 255, 255));
+        t_sala.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        t_sala.setText("CREAR SALA");
+        t_sala.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                t_salaActionPerformed(evt);
+            }
+        });
 
-        registrar.setBackground(new java.awt.Color(51, 255, 255));
-        registrar.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
-        registrar.setText("REGISTRAR");
+        t_registrar.setBackground(new java.awt.Color(51, 255, 255));
+        t_registrar.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        t_registrar.setText("REGISTRAR");
 
         tSala.setText("Tipo De Sala");
 
@@ -60,48 +74,66 @@ public class iguAdministrador extends javax.swing.JFrame {
 
         tColumnas.setText("Número de Columnas");
 
-        jButton1.setText("jButton1");
+        createSala.setText("CREAR");
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout CrearSalaLayout = new javax.swing.GroupLayout(CrearSala);
+        CrearSala.setLayout(CrearSalaLayout);
+        CrearSalaLayout.setHorizontalGroup(
+            CrearSalaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CrearSalaLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addGroup(CrearSalaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(tColumnas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(tSala, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(CrearSalaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(tipoSala)
                     .addComponent(t_filas)
                     .addComponent(t_Columnas, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE))
                 .addGap(22, 22, 22))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CrearSalaLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(createSala)
                 .addGap(39, 39, 39))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        CrearSalaLayout.setVerticalGroup(
+            CrearSalaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CrearSalaLayout.createSequentialGroup()
                 .addGap(29, 29, 29)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(CrearSalaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tSala)
                     .addComponent(tipoSala, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(CrearSalaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(t_filas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(CrearSalaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tColumnas)
                     .addComponent(t_Columnas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addComponent(createSala)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        b_busqueda.setBackground(new java.awt.Color(51, 255, 255));
+        b_busqueda.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        b_busqueda.setText("BÚSQUEDA");
+        b_busqueda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_busquedaActionPerformed(evt);
+            }
+        });
+
+        b_est1.setBackground(new java.awt.Color(51, 255, 255));
+        b_est1.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        b_est1.setText("ESTADÍSTICAS");
+        b_est1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_est1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -115,11 +147,15 @@ public class iguAdministrador extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(crearSala, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(registrar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 162, Short.MAX_VALUE)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(64, Short.MAX_VALUE))))
+                            .addComponent(t_sala, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(t_registrar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(26, 26, 26)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(b_busqueda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(b_est1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addComponent(CrearSala, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(65, 65, 65))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -129,10 +165,14 @@ public class iguAdministrador extends javax.swing.JFrame {
                 .addGap(47, 47, 47)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(crearSala, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(t_sala, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(b_est1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addComponent(registrar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(t_registrar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(b_busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(CrearSala, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(110, Short.MAX_VALUE))
         );
 
@@ -149,6 +189,19 @@ public class iguAdministrador extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void t_salaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t_salaActionPerformed
+        
+        CrearSala.setVisible(true);
+    }//GEN-LAST:event_t_salaActionPerformed
+
+    private void b_busquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_busquedaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_b_busquedaActionPerformed
+
+    private void b_est1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_est1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_b_est1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -180,23 +233,27 @@ public class iguAdministrador extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new iguAdministrador().setVisible(true);
+             
+                
             }
         });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton crearSala;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JPanel CrearSala;
+    private javax.swing.JButton b_busqueda;
+    private javax.swing.JButton b_est1;
+    private javax.swing.JButton createSala;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JButton registrar;
     private javax.swing.JLabel tColumnas;
     private javax.swing.JLabel tSala;
     private javax.swing.JTextField t_Columnas;
     private javax.swing.JTextField t_filas;
+    private javax.swing.JButton t_registrar;
+    private javax.swing.JButton t_sala;
     private javax.swing.JTextField tipoSala;
     // End of variables declaration//GEN-END:variables
 }

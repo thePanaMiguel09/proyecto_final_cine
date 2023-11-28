@@ -159,6 +159,7 @@ public class iguLogIn extends javax.swing.JFrame {
             iguAdministrador abrir = new iguAdministrador();
             abrir.setVisible(true);
             this.setVisible(false);
+            
         } else {
             JOptionPane.showMessageDialog(this, "Los campos de login son obligatorios", "Error de validación", JOptionPane.ERROR_MESSAGE);
 

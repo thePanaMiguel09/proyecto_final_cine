@@ -52,12 +52,17 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="crearSala" alignment="0" max="32767" attributes="0"/>
-                              <Component id="registrar" alignment="0" max="32767" attributes="0"/>
+                              <Component id="t_sala" alignment="0" max="32767" attributes="0"/>
+                              <Component id="t_registrar" alignment="0" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="162" max="32767" attributes="0"/>
-                          <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="64" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="b_busqueda" max="32767" attributes="0"/>
+                              <Component id="b_est1" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="CrearSala" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -71,11 +76,17 @@
                   <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Group type="102" attributes="0">
-                          <Component id="crearSala" min="-2" pref="75" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="t_sala" alignment="3" min="-2" pref="75" max="-2" attributes="0"/>
+                              <Component id="b_est1" alignment="3" min="-2" pref="75" max="-2" attributes="0"/>
+                          </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="registrar" min="-2" pref="75" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="t_registrar" alignment="3" min="-2" pref="75" max="-2" attributes="0"/>
+                              <Component id="b_busqueda" alignment="3" min="-2" pref="75" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <Component id="jPanel2" max="32767" attributes="0"/>
+                      <Component id="CrearSala" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace pref="110" max="32767" attributes="0"/>
               </Group>
@@ -94,7 +105,7 @@
             <Property name="text" type="java.lang.String" value="CINEMOVIES-ADMINISTRADOR"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="crearSala">
+        <Component class="javax.swing.JButton" name="t_sala">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="33" type="rgb"/>
@@ -104,8 +115,11 @@
             </Property>
             <Property name="text" type="java.lang.String" value="CREAR SALA"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="t_salaActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="registrar">
+        <Component class="javax.swing.JButton" name="t_registrar">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="33" type="rgb"/>
@@ -116,7 +130,7 @@
             <Property name="text" type="java.lang.String" value="REGISTRAR"/>
           </Properties>
         </Component>
-        <Container class="javax.swing.JPanel" name="jPanel2">
+        <Container class="javax.swing.JPanel" name="CrearSala">
 
           <Layout>
             <DimensionLayout dim="0">
@@ -138,7 +152,7 @@
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                      <Component id="createSala" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -162,7 +176,7 @@
                           <Component id="t_Columnas" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                      <Component id="createSala" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -190,13 +204,41 @@
             </Component>
             <Component class="javax.swing.JTextField" name="t_Columnas">
             </Component>
-            <Component class="javax.swing.JButton" name="jButton1">
+            <Component class="javax.swing.JButton" name="createSala">
               <Properties>
-                <Property name="text" type="java.lang.String" value="jButton1"/>
+                <Property name="text" type="java.lang.String" value="CREAR"/>
               </Properties>
             </Component>
           </SubComponents>
         </Container>
+        <Component class="javax.swing.JButton" name="b_busqueda">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="33" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial Black" size="12" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="B&#xda;SQUEDA"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b_busquedaActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="b_est1">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="33" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial Black" size="12" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="ESTAD&#xcd;STICAS"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b_est1ActionPerformed"/>
+          </Events>
+        </Component>
       </SubComponents>
     </Container>
   </SubComponents>
