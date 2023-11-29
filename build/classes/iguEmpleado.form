@@ -173,7 +173,7 @@
                           <Component id="name" min="-2" pref="219" max="-2" attributes="0"/>
                           <Component id="id" min="-2" pref="219" max="-2" attributes="0"/>
                           <Component id="mail" min="-2" pref="219" max="-2" attributes="0"/>
-                          <Component id="registrarCliente" min="-2" max="-2" attributes="0"/>
+                          <Component id="selc_sex" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="36" max="32767" attributes="0"/>
                   </Group>
@@ -224,7 +224,7 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="registrarCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="selc_sex" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="b_registrar" min="-2" max="-2" attributes="0"/>
@@ -303,7 +303,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="age">
             </Component>
-            <Component class="javax.swing.JComboBox" name="registrarCliente">
+            <Component class="javax.swing.JComboBox" name="selc_sex">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="5">

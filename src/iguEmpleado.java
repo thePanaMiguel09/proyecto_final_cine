@@ -44,7 +44,7 @@ public class iguEmpleado extends javax.swing.JFrame {
         id = new javax.swing.JTextField();
         mail = new javax.swing.JTextField();
         age = new javax.swing.JTextField();
-        registrarCliente = new javax.swing.JComboBox<>();
+        selc_sex = new javax.swing.JComboBox<>();
         b_registrar = new javax.swing.JButton();
         b_salir = new javax.swing.JButton();
 
@@ -100,7 +100,7 @@ public class iguEmpleado extends javax.swing.JFrame {
             }
         });
 
-        registrarCliente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Femenino", " ", " ", " " }));
+        selc_sex.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Femenino", " ", " ", " " }));
 
         b_registrar.setText("REGISTRAR CLIENTE");
 
@@ -125,7 +125,7 @@ public class iguEmpleado extends javax.swing.JFrame {
                     .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(mail, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(registrarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(selc_sex, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(36, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p_registro_userLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -164,7 +164,7 @@ public class iguEmpleado extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(p_registro_userLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(registrarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(selc_sex, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(b_registrar)
                 .addGap(0, 43, Short.MAX_VALUE))
@@ -311,6 +311,6 @@ public class iguEmpleado extends javax.swing.JFrame {
     private javax.swing.JTextField name;
     private javax.swing.JPanel p_registro_user;
     private javax.swing.JTextField phone;
-    private javax.swing.JComboBox<String> registrarCliente;
+    private javax.swing.JComboBox<String> selc_sex;
     // End of variables declaration//GEN-END:variables
 }
