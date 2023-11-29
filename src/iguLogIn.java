@@ -11,9 +11,9 @@ public class iguLogIn extends javax.swing.JFrame {
         initComponents();
         Cine elCine = new Cine();
 
-        elCine.agregarUsuario("Miguel", "mi@com", 20, true, 1000000, true, "Auxiliar", 1);
-        elCine.agregarUsuario("Dario", "dario@com", 30, true, 0, true, "", 3);
-
+        elCine.agregarAdministrador(2000000F, "Jefe", "fabian2020", "f2020", "Fabian", "fabian@udla", 30, true);
+        elCine.agregarCliente(false, "marian35", "Mariana2034", "Mariana Rojas", "ma@udla", 45, false);
+        elCine.agregarEmpleado(1300000F, "Auxiliar", "michavez", "mi2005", "Miguel Angel", "mi@udla", 18, true);
         elCine.crearNuevaSala(4, 5, 1);
         elCine.crearNuevaSala(4, 5, 2);
 

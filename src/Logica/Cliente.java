@@ -1,19 +1,17 @@
 package Logica;
 
-public class Cliente extends Persona implements Usuario{
+public class Cliente extends Usuario {
 
     private boolean membresia;
- 
 
-    public Cliente(boolean membresia, String nombre, String correo, int edad, boolean sexo) {
-        super(nombre, correo, edad, sexo);
+    public Cliente(boolean membresia, String user, String contrasenia, String nombre, String correo, int edad, boolean sexo) {
+        super(user, contrasenia, nombre, correo, edad, sexo);
         this.membresia = membresia;
     }
-
+    
     public Cliente() {
-        super("Angela", "angela@udla.edu.co", 25, false);
-        this.membresia = true;
-
+        super("Daniela", "dani2000", "Daniela Andrea", "dani.udla", 23, false);
+        this.membresia = false;
     }
 
     public boolean isMembresia() {
@@ -26,12 +24,10 @@ public class Cliente extends Persona implements Usuario{
 
     @Override
     public String toString() {
-        return super.toString() + " Cliente " + ((membresia) ? "Membresía GOLD" : "No tiene membresía");
+        return "Cliente " + super.toString() + " Membresia" + ((membresia)?"Gold":"---");
     }
+    
+    
 
-    @Override
-    public boolean iniciarSesion(String nombreUsuario, String contraseña) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
+    
 }

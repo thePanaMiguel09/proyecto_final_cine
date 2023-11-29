@@ -1,18 +1,20 @@
 package Logica;
 
-public class Administrador extends Persona implements Usuario{
+public class Administrador extends Usuario {
 
     private float salario;
     private String cargo;
 
-    public Administrador(float salario, String nombre, String correo, int edad, boolean sexo) {
-        super(nombre, correo, edad, sexo);
+    public Administrador(float salario, String cargo, String user, String contrasenia, String nombre, String correo, int edad, boolean sexo) {
+        super(user, contrasenia, nombre, correo, edad, sexo);
         this.salario = salario;
+        this.cargo = cargo;
     }
 
     public Administrador() {
-        super("Carlos", "carlos@udla.edu.co", 21, true);
-        this.salario = 3000000F;
+        super("dario23", "da2023", "Dario", "dario@udla", 32, true);
+        this.salario = 2300000F;
+        this.cargo = "Jefe";
     }
 
     public float getSalario() {
@@ -33,12 +35,7 @@ public class Administrador extends Persona implements Usuario{
 
     @Override
     public String toString() {
-        return "Administrador " + super.toString() + "\n" + "Salario " + salario + "\n" + "Cargo " + cargo;
-    }
-
-    @Override
-    public boolean iniciarSesion(String nombreUsuario, String contraseña) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return "Administrador " + super.toString() + " Salario " + salario + " Cargo=" + cargo;
     }
 
 }
