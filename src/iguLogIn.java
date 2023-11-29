@@ -155,15 +155,36 @@ public class iguLogIn extends javax.swing.JFrame {
     }//GEN-LAST:event_contraseñaActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        if (!usuario.getText().isEmpty() && !contraseña.getText().isEmpty()) {
-            iguAdministrador abrir = new iguAdministrador();
-            abrir.setVisible(true);
-            this.setVisible(false);
-            
-        } else {
-            JOptionPane.showMessageDialog(this, "Los campos de login son obligatorios", "Error de validación", JOptionPane.ERROR_MESSAGE);
+        String userAdmin = "miguel";
+        String passwordAdmin = "Mi1234";
+        String userEmpleado = "juan";
+        String passwordEmpleado = "juan123";
+        String userCliente = "carlos";
+        String passwordCliente = "carloscui";
 
+        if (!usuario.getText().isEmpty() && !contraseña.getText().isEmpty()) {
+            if (contraseña.getText().equals(passwordAdmin)) {
+                iguAdministrador abrir = new iguAdministrador();
+                abrir.setVisible(true);
+                this.setVisible(false);
+
+            } else if (usuario.getText().equals(userEmpleado) && contraseña.getText().equals(passwordEmpleado)) {
+                iguEmpleado abrir = new iguEmpleado();
+                abrir.setVisible(true);
+                this.setVisible(false);
+
+            } else if (usuario.getText().equals(userCliente) && contraseña.getText().equals(passwordCliente)) {
+                iguCliente abrir = new iguCliente();
+                abrir.setVisible(true);
+                this.setVisible(false);
+            } else {
+                JOptionPane.showMessageDialog(this, "Usuario o contraseña incorrectos", "Error de validación", JOptionPane.ERROR_MESSAGE);
+            }
+        }else{
+             JOptionPane.showMessageDialog(this, "Los campos de login son obligatorios", "Error de validación", JOptionPane.ERROR_MESSAGE);
         }
+
+
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
