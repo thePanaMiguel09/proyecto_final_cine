@@ -1,4 +1,5 @@
 
+import Logica.Cine;
 import javax.swing.JOptionPane;
 
 public class iguLogIn extends javax.swing.JFrame {
@@ -8,6 +9,15 @@ public class iguLogIn extends javax.swing.JFrame {
      */
     public iguLogIn() {
         initComponents();
+        Cine elCine = new Cine();
+
+        elCine.agregarUsuario("Miguel", "mi@com", 20, true, 1000000, true, "Auxiliar", 1);
+        elCine.agregarUsuario("Dario", "dario@com", 30, true, 0, true, "", 3);
+
+        elCine.crearNuevaSala(4, 5, 1);
+        elCine.crearNuevaSala(4, 5, 2);
+
+        elCine.reserarSilla(1, "", 1, 1, "Dario");
 
     }
 
@@ -214,6 +224,7 @@ public class iguLogIn extends javax.swing.JFrame {
         }
         //</editor-fold>
 
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
