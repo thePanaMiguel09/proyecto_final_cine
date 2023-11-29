@@ -17,10 +17,10 @@ public class iguAdministrador extends javax.swing.JFrame {
      */
     public iguAdministrador() {
         
-        CrearSala = new JPanel();
-        CrearSala.setVisible(false);
+        pn_crear_sala = new JPanel();
+        pn_crear_sala.setVisible(false);
         initComponents();
-        add(CrearSala);
+        add(pn_crear_sala);
     }
 
     /**
@@ -36,7 +36,7 @@ public class iguAdministrador extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         t_sala = new javax.swing.JButton();
         t_registrar = new javax.swing.JButton();
-        CrearSala = new javax.swing.JPanel();
+        pn_crear_sala = new javax.swing.JPanel();
         tSala = new javax.swing.JLabel();
         tipoSala = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -46,6 +46,7 @@ public class iguAdministrador extends javax.swing.JFrame {
         createSala = new javax.swing.JButton();
         b_busqueda = new javax.swing.JButton();
         b_est1 = new javax.swing.JButton();
+        bt_salir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -76,40 +77,40 @@ public class iguAdministrador extends javax.swing.JFrame {
 
         createSala.setText("CREAR");
 
-        javax.swing.GroupLayout CrearSalaLayout = new javax.swing.GroupLayout(CrearSala);
-        CrearSala.setLayout(CrearSalaLayout);
-        CrearSalaLayout.setHorizontalGroup(
-            CrearSalaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CrearSalaLayout.createSequentialGroup()
+        javax.swing.GroupLayout pn_crear_salaLayout = new javax.swing.GroupLayout(pn_crear_sala);
+        pn_crear_sala.setLayout(pn_crear_salaLayout);
+        pn_crear_salaLayout.setHorizontalGroup(
+            pn_crear_salaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pn_crear_salaLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(CrearSalaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addGroup(pn_crear_salaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(tColumnas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(tSala, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(CrearSalaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pn_crear_salaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(tipoSala)
                     .addComponent(t_filas)
                     .addComponent(t_Columnas, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE))
                 .addGap(22, 22, 22))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CrearSalaLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pn_crear_salaLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(createSala)
                 .addGap(39, 39, 39))
         );
-        CrearSalaLayout.setVerticalGroup(
-            CrearSalaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CrearSalaLayout.createSequentialGroup()
+        pn_crear_salaLayout.setVerticalGroup(
+            pn_crear_salaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pn_crear_salaLayout.createSequentialGroup()
                 .addGap(29, 29, 29)
-                .addGroup(CrearSalaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(pn_crear_salaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tSala)
                     .addComponent(tipoSala, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(CrearSalaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(pn_crear_salaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(t_filas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(CrearSalaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(pn_crear_salaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tColumnas)
                     .addComponent(t_Columnas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
@@ -135,6 +136,15 @@ public class iguAdministrador extends javax.swing.JFrame {
             }
         });
 
+        bt_salir.setBackground(new java.awt.Color(0, 255, 255));
+        bt_salir.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        bt_salir.setText("SALIR");
+        bt_salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_salirActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -142,6 +152,9 @@ public class iguAdministrador extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(bt_salir)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -154,7 +167,7 @@ public class iguAdministrador extends javax.swing.JFrame {
                             .addComponent(b_busqueda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(b_est1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
-                        .addComponent(CrearSala, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(pn_crear_sala, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(65, 65, 65))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -172,8 +185,10 @@ public class iguAdministrador extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(t_registrar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(b_busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(CrearSala, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(110, Short.MAX_VALUE))
+                    .addComponent(pn_crear_sala, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(bt_salir)
+                .addContainerGap(67, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -190,11 +205,6 @@ public class iguAdministrador extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void t_salaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t_salaActionPerformed
-        
-        CrearSala.setVisible(true);
-    }//GEN-LAST:event_t_salaActionPerformed
-
     private void b_busquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_busquedaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_b_busquedaActionPerformed
@@ -202,6 +212,16 @@ public class iguAdministrador extends javax.swing.JFrame {
     private void b_est1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_est1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_b_est1ActionPerformed
+
+    private void t_salaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t_salaActionPerformed
+        pn_crear_sala.setVisible(true);
+    }//GEN-LAST:event_t_salaActionPerformed
+
+    private void bt_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_salirActionPerformed
+        dispose();
+        iguLogIn abrir = new iguLogIn();
+        abrir.setVisible(true);
+    }//GEN-LAST:event_bt_salirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -241,13 +261,14 @@ public class iguAdministrador extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel CrearSala;
     private javax.swing.JButton b_busqueda;
     private javax.swing.JButton b_est1;
+    private javax.swing.JButton bt_salir;
     private javax.swing.JButton createSala;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel pn_crear_sala;
     private javax.swing.JLabel tColumnas;
     private javax.swing.JLabel tSala;
     private javax.swing.JTextField t_Columnas;
