@@ -123,6 +123,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="REGISTRAR CLIENTE"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b_registroClienteActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b_venderBoleta">
           <Properties>

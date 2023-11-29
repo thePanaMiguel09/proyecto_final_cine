@@ -14,6 +14,7 @@ public class iguEmpleado extends javax.swing.JFrame {
      */
     public iguEmpleado() {
         initComponents();
+        p_registro_user.setVisible(false);
     }
 
     /**
@@ -58,6 +59,11 @@ public class iguEmpleado extends javax.swing.JFrame {
         b_registroCliente.setBackground(new java.awt.Color(0, 255, 255));
         b_registroCliente.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
         b_registroCliente.setText("REGISTRAR CLIENTE");
+        b_registroCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_registroClienteActionPerformed(evt);
+            }
+        });
 
         b_venderBoleta.setBackground(new java.awt.Color(0, 255, 255));
         b_venderBoleta.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
@@ -244,6 +250,10 @@ public class iguEmpleado extends javax.swing.JFrame {
         iguLogIn abrir = new iguLogIn();
         abrir.setVisible(true);
     }//GEN-LAST:event_b_salirActionPerformed
+
+    private void b_registroClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_registroClienteActionPerformed
+        p_registro_user.setVisible(true);
+    }//GEN-LAST:event_b_registroClienteActionPerformed
 
     /**
      * @param args the command line arguments

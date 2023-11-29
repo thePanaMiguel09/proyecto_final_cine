@@ -17,10 +17,10 @@ public class iguAdministrador extends javax.swing.JFrame {
      */
     public iguAdministrador() {
         
-        pn_crear_sala = new JPanel();
-        pn_crear_sala.setVisible(false);
+        
         initComponents();
-        add(pn_crear_sala);
+        
+        f_interno.setVisible(false);
     }
 
     /**
@@ -36,6 +36,10 @@ public class iguAdministrador extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         t_sala = new javax.swing.JButton();
         t_registrar = new javax.swing.JButton();
+        b_busqueda = new javax.swing.JButton();
+        b_est1 = new javax.swing.JButton();
+        bt_salir = new javax.swing.JButton();
+        f_interno = new javax.swing.JInternalFrame();
         pn_crear_sala = new javax.swing.JPanel();
         tSala = new javax.swing.JLabel();
         tipoSala = new javax.swing.JTextField();
@@ -44,9 +48,6 @@ public class iguAdministrador extends javax.swing.JFrame {
         tColumnas = new javax.swing.JLabel();
         t_Columnas = new javax.swing.JTextField();
         createSala = new javax.swing.JButton();
-        b_busqueda = new javax.swing.JButton();
-        b_est1 = new javax.swing.JButton();
-        bt_salir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -68,6 +69,35 @@ public class iguAdministrador extends javax.swing.JFrame {
         t_registrar.setBackground(new java.awt.Color(51, 255, 255));
         t_registrar.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
         t_registrar.setText("REGISTRAR");
+
+        b_busqueda.setBackground(new java.awt.Color(51, 255, 255));
+        b_busqueda.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        b_busqueda.setText("BÚSQUEDA");
+        b_busqueda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_busquedaActionPerformed(evt);
+            }
+        });
+
+        b_est1.setBackground(new java.awt.Color(51, 255, 255));
+        b_est1.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        b_est1.setText("ESTADÍSTICAS");
+        b_est1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_est1ActionPerformed(evt);
+            }
+        });
+
+        bt_salir.setBackground(new java.awt.Color(0, 255, 255));
+        bt_salir.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        bt_salir.setText("SALIR");
+        bt_salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_salirActionPerformed(evt);
+            }
+        });
+
+        f_interno.setVisible(true);
 
         tSala.setText("Tipo De Sala");
 
@@ -115,35 +145,23 @@ public class iguAdministrador extends javax.swing.JFrame {
                     .addComponent(t_Columnas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(createSala)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(8, Short.MAX_VALUE))
         );
 
-        b_busqueda.setBackground(new java.awt.Color(51, 255, 255));
-        b_busqueda.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
-        b_busqueda.setText("BÚSQUEDA");
-        b_busqueda.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b_busquedaActionPerformed(evt);
-            }
-        });
-
-        b_est1.setBackground(new java.awt.Color(51, 255, 255));
-        b_est1.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
-        b_est1.setText("ESTADÍSTICAS");
-        b_est1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b_est1ActionPerformed(evt);
-            }
-        });
-
-        bt_salir.setBackground(new java.awt.Color(0, 255, 255));
-        bt_salir.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
-        bt_salir.setText("SALIR");
-        bt_salir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bt_salirActionPerformed(evt);
-            }
-        });
+        javax.swing.GroupLayout f_internoLayout = new javax.swing.GroupLayout(f_interno.getContentPane());
+        f_interno.getContentPane().setLayout(f_internoLayout);
+        f_internoLayout.setHorizontalGroup(
+            f_internoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(f_internoLayout.createSequentialGroup()
+                .addComponent(pn_crear_sala, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        f_internoLayout.setVerticalGroup(
+            f_internoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, f_internoLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(pn_crear_sala, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -153,12 +171,6 @@ public class iguAdministrador extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(bt_salir)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(t_sala, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(t_registrar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -166,18 +178,23 @@ public class iguAdministrador extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(b_busqueda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(b_est1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addComponent(pn_crear_sala, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(65, 65, 65))))
+                        .addGap(127, 127, 127)
+                        .addComponent(f_interno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(229, 229, 229))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bt_salir))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(26, 26, 26)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(47, 47, 47)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(t_sala, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(b_est1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -185,10 +202,12 @@ public class iguAdministrador extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(t_registrar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(b_busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(pn_crear_sala, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(f_interno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(bt_salir)
-                .addContainerGap(67, Short.MAX_VALUE))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -214,7 +233,7 @@ public class iguAdministrador extends javax.swing.JFrame {
     }//GEN-LAST:event_b_est1ActionPerformed
 
     private void t_salaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t_salaActionPerformed
-        pn_crear_sala.setVisible(true);
+        f_interno.setVisible(true);
     }//GEN-LAST:event_t_salaActionPerformed
 
     private void bt_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_salirActionPerformed
@@ -265,6 +284,7 @@ public class iguAdministrador extends javax.swing.JFrame {
     private javax.swing.JButton b_est1;
     private javax.swing.JButton bt_salir;
     private javax.swing.JButton createSala;
+    private javax.swing.JInternalFrame f_interno;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
