@@ -167,11 +167,10 @@ public class iguLogIn extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         String userAdmin = "miguel";
         String passwordAdmin = "Mi1234";
-        String userEmpleado = "juan";
-        String passwordEmpleado = "juan123";
-        String userCliente = "carlos";
-        String passwordCliente = "carloscui";
-
+        String userEmpleado = usuario.getText();
+        String passwordEmpleado = contraseña.getText();
+        String userCliente = usuario.getText();
+        String passwordCliente = contraseña.getText();
         if (!usuario.getText().isEmpty() && !contraseña.getText().isEmpty()) {
             if (contraseña.getText().equals(passwordAdmin)) {
                 iguAdministrador abrir = new iguAdministrador();
@@ -201,7 +200,7 @@ public class iguLogIn extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
+        
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
