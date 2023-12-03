@@ -5,19 +5,11 @@ import javax.swing.JOptionPane;
 
 public class iguLogIn extends javax.swing.JFrame {
 
-    /**
-     * Creates new form iguLogIn
-     */
+    Cine elCine = new Cine();
+
     public iguLogIn() {
         initComponents();
-        Cine elCine = new Cine();
         elCine.agregarUsuario("hola", "123", "Carlos", "carlos@udla", 19, true, 3114941727L, "cliente");
-       
-        
-        
-    
-        
-        
 
     }
 
@@ -165,19 +157,17 @@ public class iguLogIn extends javax.swing.JFrame {
     }//GEN-LAST:event_contraseñaActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        Cine elCine = new Cine();
-         System.out.println(elCine.mostrarUsuarios());
-        
-        
+        System.out.println(elCine.mostrarUsuarios());
+
         String userAdmin = "miguel";
         String passwordAdmin = "Mi1234";
         String userEmpleado = usuario.getText();
         String passwordEmpleado = contraseña.getText();
         String userCliente = usuario.getText();
         String passwordCliente = contraseña.getText();
-        
+
         if (!usuario.getText().isEmpty() && !contraseña.getText().isEmpty()) {
-           
+
             if (contraseña.getText().equals(passwordAdmin)) {
                 iguAdministrador abrir = new iguAdministrador();
                 abrir.setVisible(true);
@@ -195,8 +185,8 @@ public class iguLogIn extends javax.swing.JFrame {
             } else {
                 JOptionPane.showMessageDialog(this, "Usuario o contraseña incorrectos", "Error de validación", JOptionPane.ERROR_MESSAGE);
             }
-        }else{
-             JOptionPane.showMessageDialog(this, "Los campos de login son obligatorios", "Error de validación", JOptionPane.ERROR_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(this, "Los campos de login son obligatorios", "Error de validación", JOptionPane.ERROR_MESSAGE);
         }
 
 
@@ -206,8 +196,7 @@ public class iguLogIn extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        
-        
+
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
@@ -230,7 +219,6 @@ public class iguLogIn extends javax.swing.JFrame {
         }
         //</editor-fold>
 
-        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
