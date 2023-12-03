@@ -2,27 +2,19 @@ package Logica;
 
 public class Usuario extends Persona {
 
-    private String user;
     private String contrasenia;
+    private String roll;
 
-    public Usuario(String user, String contrasenia, String nombre, String correo, int edad, boolean sexo, long cell) {
+    public Usuario(String user, String contrasenia, String nombre, String correo, int edad, boolean sexo, long cell, String roll) {
         super(nombre, correo, edad, sexo, cell);
-        this.user = user;
         this.contrasenia = contrasenia;
+        this.roll = roll;
     }
 
     public Usuario() {
         super("Mario", "mario@gmial", 22, true, 3245678909L);
-        this.user = "Mario";
         this.contrasenia = "Mario1999";
-    }
-
-    public String getUser() {
-        return user;
-    }
-
-    public void setUser(String user) {
-        this.user = user;
+        this.roll = "Administrador";
     }
 
     public String getContrasenia() {
@@ -32,10 +24,20 @@ public class Usuario extends Persona {
     public void setContrasenia(String contrasenia) {
         this.contrasenia = contrasenia;
     }
+    
+     public String getRoll() {
+        return roll;
+    }
 
+    public void setRoll(String roll) {
+        this.roll = roll;
+    }
+    
     @Override
     public String toString() {
-        return super.toString() + " Usuario " + user + " Contraseña " + contrasenia;
+        return super.toString() + " Contraseña " + contrasenia + "Roll " + roll;
     }
+
+   
 
 }

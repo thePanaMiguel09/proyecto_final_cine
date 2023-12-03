@@ -3,16 +3,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
 import Logica.Cine;
+import Logica.Usuario;
 import javax.swing.text.PasswordView;
+
 public class Registrar extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form Registrar
      */
     Cine c = new Cine();
+
     public Registrar() {
         initComponents();
         this.setTitle("Registro");
+
     }
 
     /**
@@ -30,16 +34,16 @@ public class Registrar extends javax.swing.JInternalFrame {
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         name = new javax.swing.JTextField();
         mail = new javax.swing.JTextField();
         t_number = new javax.swing.JTextField();
         age = new javax.swing.JTextField();
         box_sex = new javax.swing.JComboBox<>();
-        user = new javax.swing.JTextField();
         r_cliente = new javax.swing.JButton();
         passWord = new javax.swing.JPasswordField();
+        jLabel2 = new javax.swing.JLabel();
+        c_roll = new javax.swing.JComboBox<>();
 
         setClosable(true);
         setIconifiable(true);
@@ -57,8 +61,6 @@ public class Registrar extends javax.swing.JInternalFrame {
 
         jLabel20.setText("Sexo");
 
-        jLabel21.setText("Usuario");
-
         jLabel22.setText("Contraseña");
 
         box_sex.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Femenino", " " }));
@@ -69,6 +71,10 @@ public class Registrar extends javax.swing.JInternalFrame {
                 r_clienteActionPerformed(evt);
             }
         });
+
+        jLabel2.setText("Roll");
+
+        c_roll.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cliente", "Usuario", "Administrador" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -83,10 +89,7 @@ public class Registrar extends javax.swing.JInternalFrame {
                                 .addComponent(jLabel1))
                             .addGroup(layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(jLabel18))
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabel21)))
+                                .addComponent(jLabel18)))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
@@ -98,26 +101,33 @@ public class Registrar extends javax.swing.JInternalFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel17)
-                                    .addComponent(jLabel19)
-                                    .addComponent(jLabel22))
-                                .addGap(23, 23, 23)
+                                    .addComponent(jLabel19))
+                                .addGap(47, 47, 47)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(t_number)
                                     .addComponent(mail)
-                                    .addComponent(user)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(age, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(26, 26, 26)
                                         .addComponent(jLabel20)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(box_sex, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE))
+                                        .addGap(0, 6, Short.MAX_VALUE))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel22)
+                                    .addComponent(jLabel2))
+                                .addGap(23, 23, 23)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(c_roll, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                     .addComponent(passWord))))))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(118, 118, 118)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(r_cliente)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(111, 111, 111))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -145,87 +155,55 @@ public class Registrar extends javax.swing.JInternalFrame {
                         .addComponent(box_sex, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel21)
-                    .addComponent(user, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel22)
                     .addComponent(passWord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(15, 15, 15)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(c_roll, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(r_cliente)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(19, 19, 19))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    
+
     private void r_clienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r_clienteActionPerformed
         String pass = new String(passWord.getPassword());
         int edad = Integer.parseInt(this.age.getText());
-        String item = (String)box_sex.getSelectedItem();
+        String item = (String) box_sex.getSelectedItem();
         boolean sex;
         long cell = Long.parseLong(t_number.getText());
         sex = item.equals("Masculino");
-        c.agregarCliente(false, user.getText(), pass, name.getText(), mail.getText(), edad, sex, cell);
-                
-        user.setText("");
+        String roll = (String) c_roll.getSelectedItem();
+        c.agregarUsuario(mail.getText(), pass, name.getText(), mail.getText(), edad, sex, cell, roll);
+
         passWord.setText(null);
         name.setText("");
         mail.setText("");
         age.setText("");
         t_number.setText("");
-                
+
     }//GEN-LAST:event_r_clienteActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField age;
-    private javax.swing.JButton b_registrar_cliente;
-    private javax.swing.JButton b_registrar_cliente1;
     private javax.swing.JComboBox<String> box_sex;
+    private javax.swing.JComboBox<String> c_roll;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField mail;
     private javax.swing.JTextField name;
     private javax.swing.JPasswordField passWord;
-    private javax.swing.JPasswordField passwordCliente;
-    private javax.swing.JPasswordField passwordCliente1;
     private javax.swing.JButton r_cliente;
-    private javax.swing.JTextField t_age;
-    private javax.swing.JTextField t_age1;
-    private javax.swing.JTextField t_cell;
-    private javax.swing.JTextField t_cell1;
-    private javax.swing.JTextField t_mail;
-    private javax.swing.JTextField t_mail1;
-    private javax.swing.JTextField t_nombre;
-    private javax.swing.JTextField t_nombre1;
     private javax.swing.JTextField t_number;
-    private javax.swing.JTextField t_user;
-    private javax.swing.JTextField t_user1;
-    private javax.swing.JComboBox<String> type_sex;
-    private javax.swing.JComboBox<String> type_sex1;
-    private javax.swing.JTextField user;
     // End of variables declaration//GEN-END:variables
 }

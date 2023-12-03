@@ -3,12 +3,12 @@ package Logica;
 public class SalaCine {
 
     private Pelicula movie;
-    private Cliente[][] silla;
+    private Usuario[][] silla;
     private int numSala;
     private String funcion;
     private static int ctsalas = 0;
 
-    public SalaCine(Pelicula movie, Cliente[][] silla, int numSala, String funcion) {
+    public SalaCine(Pelicula movie, Usuario[][] silla, int numSala, String funcion) {
         this.movie = movie;
         this.silla = silla;
         this.numSala = numSala;
@@ -18,7 +18,7 @@ public class SalaCine {
 
     public SalaCine() {
         this.movie = null;
-        this.silla = new Cliente[3][3];
+        this.silla = new Usuario[3][3];
         this.numSala = ++ctsalas;
         this.funcion = null;
     }
@@ -35,14 +35,14 @@ public class SalaCine {
         String mostrar = "";
         for (int i = 0; i < silla.length; i++) {
             for (int j = 0; j < silla[i].length; j++) {
-                mostrar += ((silla[i][j] == null) ? "\033[32m[o]\033[0m": "\033[31m[x]\033[0m");
+                mostrar += ((silla[i][j] == null) ? "\033[32m[o]\033[0m" : "\033[31m[x]\033[0m");
             }
             mostrar += "\n";
         }
         return mostrar;
     }
 
-    public void setSilla(Cliente[][] silla) {
+    public void setSilla(Usuario[][] silla) {
         this.silla = silla;
     }
 
@@ -75,10 +75,10 @@ public class SalaCine {
         this.funcion = funcion;
     }
 
-    public boolean asignarSilla(int numFila, int numCol, Cliente usuario) {
-        if (silla[numFila-1][numCol-1] == null) {
-            silla[numFila-1][numCol-1] = usuario;
-            
+    public boolean asignarSilla(int numFila, int numCol, Usuario usuario) {
+        if (silla[numFila - 1][numCol - 1] == null) {
+            silla[numFila - 1][numCol - 1] = usuario;
+
             return true;
         }
         return false;

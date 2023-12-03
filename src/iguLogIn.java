@@ -1,5 +1,6 @@
 
 import Logica.Cine;
+import Logica.Usuario;
 import javax.swing.JOptionPane;
 
 public class iguLogIn extends javax.swing.JFrame {
@@ -10,14 +11,13 @@ public class iguLogIn extends javax.swing.JFrame {
     public iguLogIn() {
         initComponents();
         Cine elCine = new Cine();
-
-        elCine.agregarAdministrador(2000000F, "Jefe", "fabian2020", "f2020", "Fabian", "fabian@udla", 30, true, 3115674345L);
-        elCine.agregarCliente(false, "marian35", "Mariana2034", "Mariana Rojas", "ma@udla", 45, false, 3234567136L);
-        elCine.agregarEmpleado(1300000F, "Auxiliar", "michavez", "mi2005", "Miguel Angel", "mi@udla", 18, true, 3223455566L);
-        elCine.crearNuevaSala(4, 5, 1);
-        elCine.crearNuevaSala(4, 5, 2);
-
-        elCine.reserarSilla(1, "", 1, 1, "Dario");
+        elCine.agregarUsuario("hola", "123", "Carlos", "carlos@udla", 19, true, 3114941727L, "cliente");
+       
+        
+        
+    
+        
+        
 
     }
 
@@ -165,13 +165,19 @@ public class iguLogIn extends javax.swing.JFrame {
     }//GEN-LAST:event_contraseñaActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        Cine elCine = new Cine();
+         System.out.println(elCine.mostrarUsuarios());
+        
+        
         String userAdmin = "miguel";
         String passwordAdmin = "Mi1234";
         String userEmpleado = usuario.getText();
         String passwordEmpleado = contraseña.getText();
         String userCliente = usuario.getText();
         String passwordCliente = contraseña.getText();
+        
         if (!usuario.getText().isEmpty() && !contraseña.getText().isEmpty()) {
+           
             if (contraseña.getText().equals(passwordAdmin)) {
                 iguAdministrador abrir = new iguAdministrador();
                 abrir.setVisible(true);
@@ -200,6 +206,7 @@ public class iguLogIn extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        
         
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
