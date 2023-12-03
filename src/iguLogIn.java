@@ -5,13 +5,14 @@ import javax.swing.JOptionPane;
 
 public class iguLogIn extends javax.swing.JFrame {
 
-    Cine elCine = new Cine();
+    Cine elCine = General.elCine;
 
     public iguLogIn() {
         initComponents();
-        elCine.agregarUsuario( "123", "Carlos", "carlos@udla", 19, true, 3114941727L, "administrador");
-        elCine.agregarUsuario( "898", "Daniel", "daniel@udla", 17, true, 3114321727L, "empleado");
-        elCine.agregarUsuario( "12345", "Maria", "maria@udla", 39, false, 3112341727L, "cliente");
+
+        elCine.agregarUsuario("123", "Carlos", "carlos@udla", 19, true, 3114941727L, "Administrador");
+        elCine.agregarUsuario("898", "Daniel", "daniel@udla", 17, true, 3114321727L, "Empleado");
+        elCine.agregarUsuario("12345", "Maria", "maria@udla", 39, false, 3112341727L, "Cliente");
 
     }
 
@@ -159,29 +160,36 @@ public class iguLogIn extends javax.swing.JFrame {
     }//GEN-LAST:event_contraseñaActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-       
 
         if (!usuario.getText().isEmpty() && !contraseña.getText().isEmpty()) {
             Usuario busqueda = elCine.buscarUsuario(contraseña.getText(), usuario.getText());
-            if (busqueda.getRoll().equals("administrador")) {
-                iguAdministrador abrir = new iguAdministrador();
-                abrir.setVisible(true);
-                this.setVisible(false);
+            if (busqueda != null) {
 
-            } else if (busqueda.getRoll().equals("empleado")) {
-                iguEmpleado abrir = new iguEmpleado();
-                abrir.setVisible(true);
-                this.setVisible(false);
+                System.out.println(busqueda.getRoll());
+                if (busqueda.getRoll().equals("Administrador")) {
+                    iguAdministrador abrir = new iguAdministrador();
+                    abrir.setVisible(true);
+                    this.setVisible(false);
 
-            } else if (busqueda.getRoll().equals("cliente")) {
-                iguCliente abrir = new iguCliente();
-                abrir.setVisible(true);
-                this.setVisible(false);
+                } else if (busqueda.getRoll().equals("Empleado")) {
+                    iguEmpleado abrir = new iguEmpleado();
+                    abrir.setVisible(true);
+                    this.setVisible(false);
+
+                } else if (busqueda.getRoll().equals("Cliente")) {
+                    iguCliente abrir = new iguCliente();
+                    abrir.setVisible(true);
+                    this.setVisible(false);
+                } else {
+                    JOptionPane.showMessageDialog(this, "Usuario o contraseña incorrectos", "Error de validación", JOptionPane.ERROR_MESSAGE);
+                }
             } else {
-                JOptionPane.showMessageDialog(this, "Usuario o contraseña incorrectos", "Error de validación", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Usuario no encontrado", "Error de validación", JOptionPane.ERROR_MESSAGE);
+
             }
         } else {
             JOptionPane.showMessageDialog(this, "Los campos de login son obligatorios", "Error de validación", JOptionPane.ERROR_MESSAGE);
+
         }
 
 

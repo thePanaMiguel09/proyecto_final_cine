@@ -88,18 +88,20 @@ public class Cine {
         for (int i = 0; i < users.length; i++) {
             if (users[i] == null) {
                 users[i] = nuevo;
-                return false;
+                return true;
             }
         }
         return false;
     }
 
     public Usuario buscarUsuario(String contrasenia, String usuario) {
+
         for (int i = 0; i < users.length; i++) {
-            System.out.println("pass"+contrasenia);
-            System.out.println(users[i].getContrasenia()==contrasenia);
-            if (users[i].getContrasenia() == contrasenia && users[i].getCorreo() == (usuario)) {
-                return users[i];
+           
+            if (users[i] != null) {
+                if (users[i].getContrasenia().equals(contrasenia)  && users[i].getCorreo().equals(usuario)) {
+                    return users[i];
+                }
             }
         }
         return null;

@@ -11,9 +11,10 @@ public class Registrar extends javax.swing.JInternalFrame {
     /**
      * Creates new form Registrar
      */
-    Cine c = new Cine();
+     Cine elCine = new Cine();
 
     public Registrar() {
+       
         initComponents();
         this.setTitle("Registro");
 
@@ -177,8 +178,8 @@ public class Registrar extends javax.swing.JInternalFrame {
         long cell = Long.parseLong(t_number.getText());
         sex = item.equals("Masculino");
         String roll = (String) c_roll.getSelectedItem();
-        c.agregarUsuario( pass, name.getText(), mail.getText(), edad, sex, cell, roll);
-
+        boolean para = elCine.agregarUsuario( pass, name.getText(), mail.getText(), edad, sex, cell, roll);
+        System.out.println(para);
         passWord.setText(null);
         name.setText("");
         mail.setText("");
