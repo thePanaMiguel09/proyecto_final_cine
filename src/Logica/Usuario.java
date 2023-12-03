@@ -4,11 +4,13 @@ public class Usuario extends Persona {
 
     private String contrasenia;
     private String roll;
+    
 
-    public Usuario(String user, String contrasenia, String nombre, String correo, int edad, boolean sexo, long cell, String roll) {
+    public Usuario(String contrasenia, String nombre, String correo, int edad, boolean sexo, long cell, String roll) {
         super(nombre, correo, edad, sexo, cell);
         this.contrasenia = contrasenia;
         this.roll = roll;
+        
     }
 
     public Usuario() {
@@ -24,20 +26,15 @@ public class Usuario extends Persona {
     public void setContrasenia(String contrasenia) {
         this.contrasenia = contrasenia;
     }
-    
-     public String getRoll() {
+
+    public String getRoll() {
         return roll;
     }
 
     public void setRoll(String roll) {
         this.roll = roll;
     }
+
     
-    @Override
-    public String toString() {
-        return super.toString() + " Contraseña " + contrasenia + "Roll " + roll;
-    }
-
-   
-
+    
 }

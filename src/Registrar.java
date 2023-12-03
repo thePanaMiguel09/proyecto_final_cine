@@ -177,7 +177,7 @@ public class Registrar extends javax.swing.JInternalFrame {
         long cell = Long.parseLong(t_number.getText());
         sex = item.equals("Masculino");
         String roll = (String) c_roll.getSelectedItem();
-        c.agregarUsuario(mail.getText(), pass, name.getText(), mail.getText(), edad, sex, cell, roll);
+        c.agregarUsuario( pass, name.getText(), mail.getText(), edad, sex, cell, roll);
 
         passWord.setText(null);
         name.setText("");

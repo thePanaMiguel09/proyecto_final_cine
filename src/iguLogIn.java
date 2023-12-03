@@ -1,6 +1,6 @@
 
-import Logica.Cine;
-import Logica.Usuario;
+import Logica.*;
+
 import javax.swing.JOptionPane;
 
 public class iguLogIn extends javax.swing.JFrame {
@@ -9,7 +9,9 @@ public class iguLogIn extends javax.swing.JFrame {
 
     public iguLogIn() {
         initComponents();
-        elCine.agregarUsuario("hola", "123", "Carlos", "carlos@udla", 19, true, 3114941727L, "cliente");
+        elCine.agregarUsuario( "123", "Carlos", "carlos@udla", 19, true, 3114941727L, "administrador");
+        elCine.agregarUsuario( "898", "Daniel", "daniel@udla", 17, true, 3114321727L, "empleado");
+        elCine.agregarUsuario( "12345", "Maria", "maria@udla", 39, false, 3112341727L, "cliente");
 
     }
 
@@ -157,28 +159,21 @@ public class iguLogIn extends javax.swing.JFrame {
     }//GEN-LAST:event_contraseñaActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        System.out.println(elCine.mostrarUsuarios());
-
-        String userAdmin = "miguel";
-        String passwordAdmin = "Mi1234";
-        String userEmpleado = usuario.getText();
-        String passwordEmpleado = contraseña.getText();
-        String userCliente = usuario.getText();
-        String passwordCliente = contraseña.getText();
+       
 
         if (!usuario.getText().isEmpty() && !contraseña.getText().isEmpty()) {
-
-            if (contraseña.getText().equals(passwordAdmin)) {
+            Usuario busqueda = elCine.buscarUsuario(contraseña.getText(), usuario.getText());
+            if (busqueda.getRoll().equals("administrador")) {
                 iguAdministrador abrir = new iguAdministrador();
                 abrir.setVisible(true);
                 this.setVisible(false);
 
-            } else if (usuario.getText().equals(userEmpleado) && contraseña.getText().equals(passwordEmpleado)) {
+            } else if (busqueda.getRoll().equals("empleado")) {
                 iguEmpleado abrir = new iguEmpleado();
                 abrir.setVisible(true);
                 this.setVisible(false);
 
-            } else if (usuario.getText().equals(userCliente) && contraseña.getText().equals(passwordCliente)) {
+            } else if (busqueda.getRoll().equals("cliente")) {
                 iguCliente abrir = new iguCliente();
                 abrir.setVisible(true);
                 this.setVisible(false);

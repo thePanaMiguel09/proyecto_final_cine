@@ -82,8 +82,8 @@ public class Cine {
         return "Cine " + nombre + "\n" + "Salas\n " + getSalastoString() + "\n" + "Cartelera " + getCarteleratoString() + "\n" + mostrarUsuarios();
     }
 
-    public boolean agregarUsuario(String user, String contrasenia, String nombre, String correo, int edad, boolean sexo, long cell, String roll) {
-        Usuario nuevo = new Usuario(user, contrasenia, nombre, correo, edad, sexo, cell, roll);
+    public boolean agregarUsuario(String contrasenia, String nombre, String correo, int edad, boolean sexo, long cell, String roll) {
+        Usuario nuevo = new Usuario(contrasenia, nombre, correo, edad, sexo, cell, roll);
 
         for (int i = 0; i < users.length; i++) {
             if (users[i] == null) {
@@ -92,6 +92,17 @@ public class Cine {
             }
         }
         return false;
+    }
+
+    public Usuario buscarUsuario(String contrasenia, String usuario) {
+        for (int i = 0; i < users.length; i++) {
+            System.out.println("pass"+contrasenia);
+            System.out.println(users[i].getContrasenia()==contrasenia);
+            if (users[i].getContrasenia() == contrasenia && users[i].getCorreo() == (usuario)) {
+                return users[i];
+            }
+        }
+        return null;
     }
 
     public boolean crearNuevaSala(int numF, int numC, int numS) {
