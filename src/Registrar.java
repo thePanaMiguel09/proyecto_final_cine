@@ -11,7 +11,7 @@ public class Registrar extends javax.swing.JInternalFrame {
     /**
      * Creates new form Registrar
      */
-     Cine elCine = new Cine();
+      Cine elCine = General.elCine;
 
     public Registrar() {
        

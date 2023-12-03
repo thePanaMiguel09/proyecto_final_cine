@@ -165,7 +165,7 @@ public class iguLogIn extends javax.swing.JFrame {
             Usuario busqueda = elCine.buscarUsuario(contraseña.getText(), usuario.getText());
             if (busqueda != null) {
 
-                System.out.println(busqueda.getRoll());
+                
                 if (busqueda.getRoll().equals("Administrador")) {
                     iguAdministrador abrir = new iguAdministrador();
                     abrir.setVisible(true);

@@ -35,7 +35,7 @@ public class SalaCine {
         String mostrar = "";
         for (int i = 0; i < silla.length; i++) {
             for (int j = 0; j < silla[i].length; j++) {
-                mostrar += ((silla[i][j] == null) ? "\033[32m[o]\033[0m" : "\033[31m[x]\033[0m");
+                mostrar += ((silla[i][j] == null) ? "[o]" : "\033[31m[x]\033[0m");
             }
             mostrar += "\n";
         }

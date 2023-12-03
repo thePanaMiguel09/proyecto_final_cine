@@ -147,5 +147,14 @@ public class Cine {
         }
         return false;
     }
+    
+    public Usuario buscarPorParametros(String parametro){
+        for (int i = 0; i < users.length; i++) {
+            if (users[i]!=null && users[i].getNombre().equals(parametro) || users[i].getCorreo().equals(parametro)) {
+                return users[i];
+            }
+        }
+        return null;
+    }
 
 }
