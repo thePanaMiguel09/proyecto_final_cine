@@ -5,8 +5,8 @@ public class Empleado extends Usuario {
     private float salario;
     private String cargo;
 
-    public Empleado(float salario, String cargo, String user, String contrasenia, String nombre, String correo, int edad, boolean sexo) {
-        super(user, contrasenia, nombre, correo, edad, sexo);
+    public Empleado(float salario, String cargo, String user, String contrasenia, String nombre, String correo, int edad, boolean sexo, long cell) {
+        super(user, contrasenia, nombre, correo, edad, sexo, cell);
         this.salario = salario;
         this.cargo = cargo;
     }
@@ -14,7 +14,7 @@ public class Empleado extends Usuario {
     
 
     public Empleado() {
-        super("mi.chavez@udla", "Mi2005", "Andres", "mi.chavez@udla", 19, true);
+        super("mi.chavez@udla", "Mi2005", "Andres", "mi.chavez@udla", 19, true, 3123358582L);
         this.salario = 1200000F;
         this.cargo = "Auxiliar";
     }

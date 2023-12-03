@@ -43,101 +43,43 @@ public class PanelRegistroClientes extends javax.swing.JPanel {
         b_registrar_cliente = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(267, 168));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("REGISTRO DE CLIENTES");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(98, 6, -1, -1));
 
         jLabel2.setText("Nombre");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 31, -1, -1));
+        add(t_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(68, 28, 216, -1));
 
         jLabel3.setText("Correo");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 59, -1, -1));
+        add(t_mail, new org.netbeans.lib.awtextra.AbsoluteConstraints(68, 56, 216, -1));
 
         jLabel4.setText("Celular");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 87, -1, -1));
+        add(t_cell, new org.netbeans.lib.awtextra.AbsoluteConstraints(68, 84, 216, -1));
 
         jLabel5.setText("Edad");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 115, -1, -1));
+        add(t_age, new org.netbeans.lib.awtextra.AbsoluteConstraints(68, 112, -1, -1));
 
         jLabel6.setText("Sexo");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 115, -1, -1));
 
         type_sex.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Femenino", " " }));
+        add(type_sex, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 112, -1, -1));
 
         jLabel7.setText("Usuario");
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 143, -1, -1));
+        add(t_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(68, 140, 216, -1));
 
         jLabel8.setText("Contraseña");
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 168, -1, -1));
+        add(passwordCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 168, -1, -1));
 
         b_registrar_cliente.setText("REGISTRAR");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(70, 70, 70))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel7))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(t_user)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(t_age, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(type_sex, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(26, 26, 26))
-                            .addComponent(t_nombre)
-                            .addComponent(t_mail)
-                            .addComponent(t_cell)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel8)
-                        .addGap(18, 18, 18)
-                        .addComponent(passwordCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(b_registrar_cliente)))
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(t_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(t_mail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(t_cell, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(t_age, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6)
-                    .addComponent(type_sex, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(t_user, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel8)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(passwordCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(b_registrar_cliente)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        add(b_registrar_cliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(196, 168, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
 

@@ -2,14 +2,6 @@
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
-/**
- *
- * @author pc
- */
 public class iguAdministrador extends javax.swing.JFrame {
 
     /**
@@ -18,9 +10,7 @@ public class iguAdministrador extends javax.swing.JFrame {
     public iguAdministrador() {
 
         initComponents();
-
-        f_interno.setVisible(false);
-        
+        DeskopAdmin.setVisible(true);
 
     }
 
@@ -40,7 +30,8 @@ public class iguAdministrador extends javax.swing.JFrame {
         b_busqueda = new javax.swing.JButton();
         b_est1 = new javax.swing.JButton();
         bt_salir = new javax.swing.JButton();
-        f_interno = new javax.swing.JInternalFrame();
+        DeskopAdmin = new javax.swing.JDesktopPane();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -95,18 +86,18 @@ public class iguAdministrador extends javax.swing.JFrame {
             }
         });
 
-        f_interno.setVisible(true);
+        javax.swing.GroupLayout DeskopAdminLayout = new javax.swing.GroupLayout(DeskopAdmin);
+        DeskopAdmin.setLayout(DeskopAdminLayout);
+        DeskopAdminLayout.setHorizontalGroup(
+            DeskopAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 370, Short.MAX_VALUE)
+        );
+        DeskopAdminLayout.setVerticalGroup(
+            DeskopAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 326, Short.MAX_VALUE)
+        );
 
-        javax.swing.GroupLayout f_internoLayout = new javax.swing.GroupLayout(f_interno.getContentPane());
-        f_interno.getContentPane().setLayout(f_internoLayout);
-        f_internoLayout.setHorizontalGroup(
-            f_internoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 267, Short.MAX_VALUE)
-        );
-        f_internoLayout.setVerticalGroup(
-            f_internoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 215, Short.MAX_VALUE)
-        );
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -122,24 +113,25 @@ public class iguAdministrador extends javax.swing.JFrame {
                         .addGap(26, 26, 26)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(b_busqueda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(b_est1, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE))
-                        .addGap(122, 122, 122))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(bt_salir)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addComponent(f_interno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(234, 234, 234))
+                            .addComponent(b_est1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(46, 46, 46))
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bt_salir))
+                .addComponent(DeskopAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(DeskopAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(47, 47, 47)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel2)
+                        .addGap(25, 25, 25)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(t_sala, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(b_est1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -148,18 +140,15 @@ public class iguAdministrador extends javax.swing.JFrame {
                             .addComponent(t_registrar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(b_busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(25, 25, 25)
-                        .addComponent(bt_salir))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(55, 55, 55)
-                        .addComponent(f_interno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(60, Short.MAX_VALUE))
+                        .addComponent(bt_salir)))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -170,7 +159,9 @@ public class iguAdministrador extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void b_busquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_busquedaActionPerformed
-        // TODO add your handling code here:
+        Buscar buscar = new Buscar();
+        DeskopAdmin.add(buscar);
+        buscar.setVisible(true);
     }//GEN-LAST:event_b_busquedaActionPerformed
 
     private void b_est1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_est1ActionPerformed
@@ -178,7 +169,11 @@ public class iguAdministrador extends javax.swing.JFrame {
     }//GEN-LAST:event_b_est1ActionPerformed
 
     private void t_salaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t_salaActionPerformed
-        f_interno.setVisible(true);
+        CrearSala nueva = new CrearSala();
+        DeskopAdmin.add(nueva);
+        nueva.setVisible(true);
+
+
     }//GEN-LAST:event_t_salaActionPerformed
 
     private void bt_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_salirActionPerformed
@@ -188,11 +183,12 @@ public class iguAdministrador extends javax.swing.JFrame {
     }//GEN-LAST:event_bt_salirActionPerformed
 
     private void t_registrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t_registrarActionPerformed
-        f_interno.setVisible(true);
-        f_interno.setLayout(new BorderLayout());
-        PanelRegistroClientes abrir = new PanelRegistroClientes();
-        abrir.setVisible(true);
-        f_interno.add(abrir, BorderLayout.CENTER);
+
+        Registrar nuevo = new Registrar();
+        DeskopAdmin.add(nuevo);
+        nuevo.setVisible(true);
+
+
     }//GEN-LAST:event_t_registrarActionPerformed
 
     /**
@@ -232,11 +228,12 @@ public class iguAdministrador extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDesktopPane DeskopAdmin;
     private javax.swing.JButton b_busqueda;
     private javax.swing.JButton b_est1;
     private javax.swing.JButton bt_salir;
-    private javax.swing.JInternalFrame f_interno;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton t_registrar;
     private javax.swing.JButton t_sala;

@@ -1,17 +1,19 @@
 package Logica;
 
-public class Persona {
+ public class Persona {
 
     private String nombre;
     private String correo;
     private int edad;
     private boolean sexo;
+    private long cell;
 
-    public Persona(String nombre, String correo, int edad, boolean sexo) {
+    public Persona(String nombre, String correo, int edad, boolean sexo, long cell) {
         this.nombre = nombre;
         this.correo = correo;
         this.edad = edad;
         this.sexo = sexo;
+        this.cell = cell;
     }
 
     public Persona() {
@@ -19,6 +21,7 @@ public class Persona {
         this.correo = "mi.chavez@udla.edu.co";
         this.edad = 18;
         this.sexo = true;
+        this.cell = 3217633317L;
     }
 
     public String getNombre() {
@@ -53,9 +56,19 @@ public class Persona {
         this.sexo = sexo;
     }
 
+    public long getCell() {
+        return cell;
+    }
+
+    public void setCell(long cell) {
+        this.cell = cell;
+    }
+    
+    
+
     @Override
     public String toString() {
-        return ((sexo) ? "Sr " : "Sra ") + nombre + "\nCorreo " + correo + "\n" + edad + " años";
+        return ((sexo) ? "Sr " : "Sra ") + nombre + "\nCorreo " + correo + "\n" + edad + " años" + "\n" + "Telefono " + cell;
     }
 
 }

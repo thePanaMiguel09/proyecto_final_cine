@@ -11,9 +11,9 @@ public class iguLogIn extends javax.swing.JFrame {
         initComponents();
         Cine elCine = new Cine();
 
-        elCine.agregarAdministrador(2000000F, "Jefe", "fabian2020", "f2020", "Fabian", "fabian@udla", 30, true);
-        elCine.agregarCliente(false, "marian35", "Mariana2034", "Mariana Rojas", "ma@udla", 45, false);
-        elCine.agregarEmpleado(1300000F, "Auxiliar", "michavez", "mi2005", "Miguel Angel", "mi@udla", 18, true);
+        elCine.agregarAdministrador(2000000F, "Jefe", "fabian2020", "f2020", "Fabian", "fabian@udla", 30, true, 3115674345L);
+        elCine.agregarCliente(false, "marian35", "Mariana2034", "Mariana Rojas", "ma@udla", 45, false, 3234567136L);
+        elCine.agregarEmpleado(1300000F, "Auxiliar", "michavez", "mi2005", "Miguel Angel", "mi@udla", 18, true, 3223455566L);
         elCine.crearNuevaSala(4, 5, 1);
         elCine.crearNuevaSala(4, 5, 2);
 
@@ -234,24 +234,14 @@ public class iguLogIn extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField contraseña;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JEditorPane jEditorPane1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField txt_contraseña;
-    private javax.swing.JTextField txt_contraseña1;
-    private javax.swing.JTextField txt_usuario;
-    private javax.swing.JTextField txt_usuario1;
     private javax.swing.JTextField usuario;
     // End of variables declaration//GEN-END:variables
 }

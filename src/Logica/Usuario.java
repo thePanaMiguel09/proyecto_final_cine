@@ -5,14 +5,14 @@ public class Usuario extends Persona {
     private String user;
     private String contrasenia;
 
-    public Usuario(String user, String contrasenia, String nombre, String correo, int edad, boolean sexo) {
-        super(nombre, correo, edad, sexo);
+    public Usuario(String user, String contrasenia, String nombre, String correo, int edad, boolean sexo, long cell) {
+        super(nombre, correo, edad, sexo, cell);
         this.user = user;
         this.contrasenia = contrasenia;
     }
 
     public Usuario() {
-        super("Mario", "mario@gmial", 22, true);
+        super("Mario", "mario@gmial", 22, true, 3245678909L);
         this.user = "Mario";
         this.contrasenia = "Mario1999";
     }

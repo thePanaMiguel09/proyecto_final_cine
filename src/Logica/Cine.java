@@ -124,8 +124,8 @@ public class Cine {
         return "Cine " + nombre + "\n" + "Salas\n " + getSalastoString() + "\n" + "Cartelera " + getCarteleratoString() + "\n" + getUsuarioAdministradortoString() + "\n" + getUsuarioEmpleadotoString() + "\n" + getUsuarioClientetoString();
     }
     
-    public boolean agregarEmpleado(float salario, String cargo, String user, String contrasenia, String nombre, String correo, int edad, boolean sexo) {
-        Empleado nuevo = new Empleado(salario, cargo, user, contrasenia, nombre, correo, edad, sexo);
+    public boolean agregarEmpleado(float salario, String cargo, String user, String contrasenia, String nombre, String correo, int edad, boolean sexo, long cell) {
+        Empleado nuevo = new Empleado(salario, cargo, user, contrasenia, nombre, correo, edad, sexo, cell);
         for (int i = 0; i < usuarioEmpleado.length; i++) {
             if (usuarioEmpleado[i] == null) {
                 usuarioEmpleado[i] = nuevo;
@@ -135,8 +135,8 @@ public class Cine {
         return false;
     }
     
-    public boolean agregarCliente(boolean membresia, String user, String contrasenia, String nombre, String correo, int edad, boolean sexo) {
-        Cliente nuevo = new Cliente(membresia, user, contrasenia, nombre, correo, edad, sexo);
+    public boolean agregarCliente(boolean membresia, String user, String contrasenia, String nombre, String correo, int edad, boolean sexo, long cell) {
+        Cliente nuevo = new Cliente(membresia, user, contrasenia, nombre, correo, edad, sexo, cell);
         for (int i = 0; i < usuarioCliente.length; i++) {
             if (usuarioCliente[i] == null) {
                 usuarioCliente[i] = nuevo;
@@ -146,8 +146,8 @@ public class Cine {
         return false;
     }
     
-    public boolean agregarAdministrador(float salario, String cargo, String user, String contrasenia, String nombre, String correo, int edad, boolean sexo) {
-        Administrador nuevo = new Administrador(salario, cargo, user, contrasenia, nombre, correo, edad, sexo);
+    public boolean agregarAdministrador(float salario, String cargo, String user, String contrasenia, String nombre, String correo, int edad, boolean sexo, long cell) {
+        Administrador nuevo = new Administrador(salario, cargo, user, contrasenia, nombre, correo, edad, sexo, cell);
         for (int i = 0; i < usuarioAdministrador.length; i++) {
             if (usuarioAdministrador[i] == null) {
                 usuarioAdministrador[i] = nuevo;
