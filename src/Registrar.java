@@ -4,6 +4,7 @@
  */
 import Logica.Cine;
 import Logica.Usuario;
+import javax.swing.JOptionPane;
 import javax.swing.text.PasswordView;
 
 public class Registrar extends javax.swing.JInternalFrame {
@@ -11,10 +12,10 @@ public class Registrar extends javax.swing.JInternalFrame {
     /**
      * Creates new form Registrar
      */
-      Cine elCine = General.elCine;
+    Cine elCine = General.elCine;
 
     public Registrar() {
-       
+
         initComponents();
         this.setTitle("Registro");
 
@@ -75,7 +76,7 @@ public class Registrar extends javax.swing.JInternalFrame {
 
         jLabel2.setText("Roll");
 
-        c_roll.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cliente", "Usuario", "Administrador" }));
+        c_roll.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cliente", "Empleado", "Administrador" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -113,16 +114,14 @@ public class Registrar extends javax.swing.JInternalFrame {
                                         .addComponent(jLabel20)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(box_sex, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 6, Short.MAX_VALUE))))
+                                        .addGap(0, 0, Short.MAX_VALUE))))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel22)
                                     .addComponent(jLabel2))
                                 .addGap(23, 23, 23)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(c_roll, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(c_roll, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(passWord))))))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -171,20 +170,26 @@ public class Registrar extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void r_clienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r_clienteActionPerformed
-        String pass = new String(passWord.getPassword());
-        int edad = Integer.parseInt(this.age.getText());
-        String item = (String) box_sex.getSelectedItem();
-        boolean sex;
-        long cell = Long.parseLong(t_number.getText());
-        sex = item.equals("Masculino");
-        String roll = (String) c_roll.getSelectedItem();
-        boolean para = elCine.agregarUsuario( pass, name.getText(), mail.getText(), edad, sex, cell, roll);
-        System.out.println(para);
-        passWord.setText(null);
-        name.setText("");
-        mail.setText("");
-        age.setText("");
-        t_number.setText("");
+        if (!age.getText().isEmpty() && !t_number.getText().isEmpty()) {
+            String pass = new String(passWord.getPassword());
+            int edad = Integer.parseInt(this.age.getText());
+            String item = (String) box_sex.getSelectedItem();
+            boolean sex;
+            long cell = Long.parseLong(t_number.getText());
+            sex = item.equals("Masculino");
+            String roll = (String) c_roll.getSelectedItem();
+            elCine.agregarUsuario(pass, name.getText(), mail.getText(), edad, sex, cell, roll);
+
+            passWord.setText(null);
+            name.setText("");
+            mail.setText("");
+            age.setText("");
+            t_number.setText("");
+            JOptionPane.showMessageDialog(this, "REGISTRO EXITOSO", "Registro Completado", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(this, "REGISTRO NO EXITOSO, LLENE LOS CAMPOS", "Error!", JOptionPane.ERROR_MESSAGE);
+
+        }
 
     }//GEN-LAST:event_r_clienteActionPerformed
 

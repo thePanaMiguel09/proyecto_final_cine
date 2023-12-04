@@ -97,9 +97,9 @@ public class Cine {
     public Usuario buscarUsuario(String contrasenia, String usuario) {
 
         for (int i = 0; i < users.length; i++) {
-           
+
             if (users[i] != null) {
-                if (users[i].getContrasenia().equals(contrasenia)  && users[i].getCorreo().equals(usuario)) {
+                if (users[i].getContrasenia().equals(contrasenia) && users[i].getCorreo().equals(usuario)) {
                     return users[i];
                 }
             }
@@ -129,32 +129,66 @@ public class Cine {
 
     public int buscarUsuario(String parametro) {
         for (int i = 0; i < users.length; i++) {
-            if (users[i] != null && users[i].getNombre().equals(parametro) || users[i].getCell() == Long.parseLong(parametro) || users[i].getCorreo().equals(parametro)) {
+            if (users[i] != null && users[i].getNombre().equals(parametro) || users[i].getCorreo().equals(parametro)) {
                 return i;
             }
         }
         return -1;
     }
 
-    public boolean reserarSilla(int numSala, String funcion, int numFila, int numCom, String parametro) {
+    public boolean reservarSilla(int numSala, String funcion, int numFila, int numCom, String parametro) {
         int pos = buscarSala(numSala);
         int posCliente = buscarUsuario(parametro);
-        if (pos != -1 && posCliente != -1 && salas[pos].getFuncion().equals(funcion)) {
+        if (pos != -1 && posCliente != -1) {
             Usuario tmp = users[posCliente];
             salas[pos].asignarSilla(numFila, numCom, tmp);
             return true;
-
         }
         return false;
     }
-    
-    public Usuario buscarPorParametros(String parametro){
+
+    public String buscarPorParametros(String parametro) {
+        String mostrar = "";
         for (int i = 0; i < users.length; i++) {
-            if (users[i]!=null && users[i].getNombre().equals(parametro) || users[i].getCorreo().equals(parametro)) {
-                return users[i];
+            if (users[i] != null && (users[i].getNombre().equals(parametro) || users[i].getCorreo().equals(parametro))) {
+                mostrar += users[i].toString() + "\n";
+            }
+            
+        }
+        return mostrar;
+    }
+
+    public String mostrarClientes(String nombre) {
+        String mostrar = "";
+        for (int i = 0; i < users.length; i++) {
+            if (users[i] != null && users[i].getNombre().equals(nombre) || users[i].getCorreo().equals(nombre)) {
+                mostrar += users[i].toString();
+                return mostrar;
+            }
+
+        }
+        return "USUARIO NO ENCONTRADO";
+    }
+
+    public boolean asignarFuncion(int nSala, String nombre, String clasificacion, String sinopsis, int duracion, boolean tipo) {
+        for (int i = 0; i < salas.length; i++) {
+            if (salas[i].getNumSala() == nSala) {
+                Pelicula nueva = new Pelicula(nombre, clasificacion, sinopsis, duracion, tipo);
+                salas[i].setMovie(nueva);
+                return true;
             }
         }
-        return null;
+        return false;
+    }
+
+    public String listarClientes() {
+        String mostrar = "";
+        for (int i = 0; i < users.length; i++) {
+            if (users[i] != null && users[i].getRoll().equals("Cliente")) {
+                mostrar += users[i].toString()+"\n";
+            }
+        }
+        return mostrar;
     }
 
 }

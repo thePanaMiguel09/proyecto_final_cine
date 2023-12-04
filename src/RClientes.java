@@ -1,17 +1,19 @@
+
+import Logica.Cine;
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
-
 /**
  *
  * @author pc
  */
 public class RClientes extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form RClientes
-     */
+    Cine elCine = General.elCine;
+
     public RClientes() {
         initComponents();
     }
@@ -32,111 +34,89 @@ public class RClientes extends javax.swing.JInternalFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
+        age = new javax.swing.JTextField();
+        mail = new javax.swing.JTextField();
+        cell = new javax.swing.JTextField();
+        name = new javax.swing.JTextField();
+        passwod = new javax.swing.JTextField();
         t_sex = new javax.swing.JComboBox<>();
+        registrar = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        mostrar = new javax.swing.JTextArea();
 
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
         setTitle("REGISTRO DE CLIENTES");
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("Nombre");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 20, -1, -1));
 
         jLabel2.setText("Correo");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 54, -1, -1));
 
         jLabel3.setText("Teléfono");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 85, -1, -1));
 
         jLabel4.setText("Edad");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 113, -1, -1));
 
         jLabel5.setText("Sexo");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 144, -1, -1));
 
         jLabel6.setText("Contraseña");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 175, -1, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(365, 14, 99, -1));
+        getContentPane().add(age, new org.netbeans.lib.awtextra.AbsoluteConstraints(81, 110, 102, -1));
+        getContentPane().add(mail, new org.netbeans.lib.awtextra.AbsoluteConstraints(81, 51, 102, -1));
+        getContentPane().add(cell, new org.netbeans.lib.awtextra.AbsoluteConstraints(81, 82, 102, -1));
+        getContentPane().add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(81, 17, 102, -1));
+        getContentPane().add(passwod, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 175, 105, -1));
 
         t_sex.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Femenino" }));
+        getContentPane().add(t_sex, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 141, 105, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(6, 6, 6)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5))
-                        .addGap(29, 29, 29)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(211, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(139, 139, 139)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(39, 39, 39)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(t_sex, 0, 105, Short.MAX_VALUE)
-                    .addComponent(jTextField5))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(3, 3, 3)
-                                .addComponent(jLabel1))
-                            .addComponent(jLabel7))
-                        .addGap(15, 15, 15)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(3, 3, 3)
-                                .addComponent(jLabel2))
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(12, 12, 12)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(t_sex, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-        );
+        registrar.setText("REGISTRAR");
+        registrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                registrarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(registrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 203, -1, -1));
+
+        mostrar.setColumns(20);
+        mostrar.setRows(5);
+        jScrollPane1.setViewportView(mostrar);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(189, 6, 136, 191));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void registrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarActionPerformed
+
+        if (!passwod.getText().isEmpty() && !name.getText().isEmpty() && !mail.getText().isEmpty() && !age.getText().isEmpty() && !cell.getText().isEmpty()) {
+            int edad = Integer.parseInt(age.getText());
+            String item = (String) t_sex.getSelectedItem();
+            boolean sex;
+            long celu = Long.parseLong(this.cell.getText());
+            sex = item.equals("Masculino");
+            elCine.agregarUsuario(passwod.getText(), name.getText(), mail.getText(), edad, sex, celu, "Cliente");
+            
+            mostrar.setText(elCine.mostrarClientes(name.getText()));
+            
+                        JOptionPane.showMessageDialog(this, "Registro Exitoso", "Cliente Registrado", JOptionPane.INFORMATION_MESSAGE);
+
+        }else{
+            JOptionPane.showMessageDialog(this, "Los campos deben estar lleno", "Campos Vacíos", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_registrarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField age;
+    private javax.swing.JTextField cell;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -144,11 +124,12 @@ public class RClientes extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField mail;
+    private javax.swing.JTextArea mostrar;
+    private javax.swing.JTextField name;
+    private javax.swing.JTextField passwod;
+    private javax.swing.JButton registrar;
     private javax.swing.JComboBox<String> t_sex;
     // End of variables declaration//GEN-END:variables
 }

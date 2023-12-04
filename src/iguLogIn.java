@@ -11,8 +11,6 @@ public class iguLogIn extends javax.swing.JFrame {
         initComponents();
 
         elCine.agregarUsuario("123", "Carlos", "carlos@udla", 19, true, 3114941727L, "Administrador");
-        elCine.agregarUsuario("898", "Daniel", "daniel@udla", 17, true, 3114321727L, "Empleado");
-        elCine.agregarUsuario("12345", "Maria", "maria@udla", 39, false, 3112341727L, "Cliente");
 
     }
 

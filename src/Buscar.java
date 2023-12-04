@@ -1,9 +1,6 @@
 
 import Logica.*;
 
-
-
-
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
@@ -20,8 +17,6 @@ public class Buscar extends javax.swing.JInternalFrame {
         initComponents();
         this.setTitle("Buscar");
     }
-    
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -114,16 +109,14 @@ public class Buscar extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarActionPerformed
-       Usuario busqueda = elCine.buscarPorParametros(t_busqueda.getText());
-        if (busqueda!=null) {
-            String mostrar = busqueda.toString();
-            t_mostrar.setText(mostrar);
-        }
+        String mostrar = elCine.buscarPorParametros(t_busqueda.getText());
+        t_mostrar.setText(mostrar);
     }//GEN-LAST:event_buscarActionPerformed
 
     private void listaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaActionPerformed
-        String mostrar = elCine.mostrarUsuarios();
-        t_mostrar.setText(mostrar);
+
+        t_mostrar.setText(elCine.listarClientes());
+
     }//GEN-LAST:event_listaActionPerformed
 
     private void cleanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cleanActionPerformed
@@ -141,5 +134,3 @@ public class Buscar extends javax.swing.JInternalFrame {
     private javax.swing.JTextArea t_mostrar;
     // End of variables declaration//GEN-END:variables
 }
-
-

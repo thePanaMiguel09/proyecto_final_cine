@@ -3,7 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 
-    import Logica.Cine;
+import Logica.Cine;
+
 public class iguEmpleado extends javax.swing.JFrame {
 
     /**
@@ -12,8 +13,8 @@ public class iguEmpleado extends javax.swing.JFrame {
     public iguEmpleado() {
         initComponents();
         DeskopEmpleado.setVisible(true);
-        
-            }
+
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -32,16 +33,15 @@ public class iguEmpleado extends javax.swing.JFrame {
         b_salir = new javax.swing.JButton();
         jDesktopPane1 = new javax.swing.JDesktopPane();
         DeskopEmpleado = new javax.swing.JDesktopPane();
+        crearFuncion = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("CINEMOVIES-EMPLEADO");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 27, 364, 32));
 
         b_registroCliente.setBackground(new java.awt.Color(0, 255, 255));
         b_registroCliente.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
@@ -51,17 +51,19 @@ public class iguEmpleado extends javax.swing.JFrame {
                 b_registroClienteActionPerformed(evt);
             }
         });
-        jPanel1.add(b_registroCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(79, 179, -1, -1));
 
         b_venderBoleta.setBackground(new java.awt.Color(0, 255, 255));
         b_venderBoleta.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
         b_venderBoleta.setText("VENDER BOLETA");
-        jPanel1.add(b_venderBoleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(79, 142, 177, -1));
 
         b_reserva.setBackground(new java.awt.Color(0, 255, 255));
         b_reserva.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
         b_reserva.setText("RESERVAR SILLA");
-        jPanel1.add(b_reserva, new org.netbeans.lib.awtextra.AbsoluteConstraints(79, 216, 177, -1));
+        b_reserva.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_reservaActionPerformed(evt);
+            }
+        });
 
         b_salir.setBackground(new java.awt.Color(0, 255, 255));
         b_salir.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
@@ -71,10 +73,8 @@ public class iguEmpleado extends javax.swing.JFrame {
                 b_salirActionPerformed(evt);
             }
         });
-        jPanel1.add(b_salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(122, 259, -1, -1));
 
         jDesktopPane1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(jDesktopPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 55, -1, -1));
 
         javax.swing.GroupLayout DeskopEmpleadoLayout = new javax.swing.GroupLayout(DeskopEmpleado);
         DeskopEmpleado.setLayout(DeskopEmpleadoLayout);
@@ -87,17 +87,70 @@ public class iguEmpleado extends javax.swing.JFrame {
             .addGap(0, 320, Short.MAX_VALUE)
         );
 
-        jPanel1.add(DeskopEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 60, 330, 320));
+        crearFuncion.setBackground(new java.awt.Color(0, 255, 255));
+        crearFuncion.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        crearFuncion.setText("ASIGNAR FUNCIÓN");
+        crearFuncion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                crearFuncionActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(79, 79, 79)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(41, 41, 41)
+                                .addComponent(b_salir))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(crearFuncion, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(b_venderBoleta, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(b_registroCliente, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(b_reserva, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(18, 18, 18)
+                        .addComponent(DeskopEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(26, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(83, 83, 83)
+                        .addComponent(b_venderBoleta)
+                        .addGap(12, 12, 12)
+                        .addComponent(b_registroCliente)
+                        .addGap(12, 12, 12)
+                        .addComponent(b_reserva)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(crearFuncion)
+                        .addGap(14, 14, 14)
+                        .addComponent(b_salir))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(DeskopEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 630, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 432, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -110,18 +163,30 @@ public class iguEmpleado extends javax.swing.JFrame {
     }//GEN-LAST:event_b_salirActionPerformed
 
     private void b_registroClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_registroClienteActionPerformed
-       Registrar registroCliente = new Registrar();
-       registroCliente.setVisible(true);
-       DeskopEmpleado.add(registroCliente);
-       
-       
+        RClientes registroCliente = new RClientes();
+        registroCliente.setVisible(true);
+        DeskopEmpleado.add(registroCliente);
+
+
     }//GEN-LAST:event_b_registroClienteActionPerformed
+
+    private void b_reservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_reservaActionPerformed
+        ReservaSilla reserva = new ReservaSilla();
+        reserva.setVisible(true);
+        DeskopEmpleado.add(reserva);
+    }//GEN-LAST:event_b_reservaActionPerformed
+
+    private void crearFuncionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearFuncionActionPerformed
+      Funcion nueva = new Funcion();
+      nueva.setVisible(true);
+      DeskopEmpleado.add(nueva);
+    }//GEN-LAST:event_crearFuncionActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        
+
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
@@ -158,6 +223,7 @@ public class iguEmpleado extends javax.swing.JFrame {
     private javax.swing.JButton b_reserva;
     private javax.swing.JButton b_salir;
     private javax.swing.JButton b_venderBoleta;
+    private javax.swing.JButton crearFuncion;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;

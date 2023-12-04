@@ -11,7 +11,7 @@ public class SalaCine {
     public SalaCine(Pelicula movie, Usuario[][] silla, int numSala, String funcion) {
         this.movie = movie;
         this.silla = silla;
-        this.numSala = numSala;
+        this.numSala = numSala; 
         this.funcion = funcion;
 
     }
@@ -35,7 +35,7 @@ public class SalaCine {
         String mostrar = "";
         for (int i = 0; i < silla.length; i++) {
             for (int j = 0; j < silla[i].length; j++) {
-                mostrar += ((silla[i][j] == null) ? "[o]" : "\033[31m[x]\033[0m");
+                mostrar += ((silla[i][j] == null) ? "[o]" : "[x]");
             }
             mostrar += "\n";
         }
